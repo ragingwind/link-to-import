@@ -39,7 +39,7 @@ function linkToImport(html, evaluate) {
       var href = extractHref(link, 'stylesheet');
       if (href) {
         var style = dom5.constructors.element('style');
-        dom5.setTextContent(style, '@import url(' + (href ? evaluate(href) : href) + ')');
+        dom5.setTextContent(style, '@import url(' + (evaluate ? evaluate(href) : href) + ')');
         dom5.replace(link, style);
       }
     });
